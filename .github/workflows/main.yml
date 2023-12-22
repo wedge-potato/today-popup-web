@@ -51,7 +51,7 @@ jobs:
 
       # Build
       - name: Build
-        run: yarn run build && cp dist/index.html dist/404.html
+        run: pnpm run build && cp dist/index.html dist/404.html
 
       # Deploy
       - name: Deploy
