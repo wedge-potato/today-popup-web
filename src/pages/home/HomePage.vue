@@ -1,5 +1,5 @@
 <template>
-  <top-bar />
+  <nav-bar show-logo show-setting />
   <div class='flex justify-between'>
     <span>지역</span>
     <button @click='changeSort'>{{ sortTextRef }}</button>
@@ -8,7 +8,7 @@
 </template>
 <script setup lang='ts'>
 
-import TopBar from '../../components/top-bar/TopBar.vue'
+import NavBar from '../../components/nav/NavBar.vue'
 import { getPopupList } from '../../requests/getPopupList.ts'
 import PopupList from '../../components/popup/PopupList.vue'
 import { useRouter } from 'vue-router'

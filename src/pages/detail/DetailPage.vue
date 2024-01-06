@@ -1,5 +1,5 @@
 <template>
-  <top-bar />
+  <nav-bar />
   <img :src='mock' alt='popup store thumbnail'>
   <div>
     <h1>{{ data.title }}</h1>
@@ -24,7 +24,7 @@
 </template>
 <script setup lang='ts'>
 
-import TopBar from '../../components/top-bar/TopBar.vue'
+import NavBar from '../../components/nav/NavBar.vue'
 import mock from '../../assets/mock.png'
 import { getPopup } from '../../requests/getPopup.ts'
 import { computed } from 'vue'

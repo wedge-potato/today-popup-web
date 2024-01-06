@@ -1,10 +1,10 @@
 <template>
-  <top-bar />
+  <nav-bar />
   <menu-item v-for='(menu, index) in menuList' v-bind:key='index' :name='menu.name' :route='menu.route'
              @click='onClick(menu.route)' />
 </template>
 <script setup lang='ts'>
-import TopBar from '../../components/top-bar/TopBar.vue'
+import NavBar from '../../components/nav/NavBar.vue'
 import MenuItem from './_components/MenuItem.vue'
 import { useRouter } from 'vue-router'
 
