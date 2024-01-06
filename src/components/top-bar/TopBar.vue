@@ -1,20 +1,31 @@
 <template>
-  <div class="flex justify-between bg-gray-200">
-    <button v-if="!isHome" @click="onClickBack">뒤로가기</button>
-    <h1 v-if="isHome">서비스명 + 로고</h1>
-    <button v-if="!isSetting" @click="onClickSetting">설정</button>
+  <div class='flex justify-between items-center bg-grey-5 h-12 px-4'>
+    <img v-if='showLogo' :src='logoWithText' alt='오늘의 팝업' height='24px' />
+    <button v-else @click='onClickBack'>
+      <img :src='back' alt='설정' width='24px' height='24px' />
+    </button>
+    <button v-if='showSetting' @click='onClickSetting'>
+      <img :src='setting' alt='설정' width='24px' height='24px' />
+    </button>
   </div>
 </template>
-<script setup lang="ts">
+<script setup lang='ts'>
 
-import {useRouter} from "vue-router";
-import {computed} from "vue";
+import { useRouter } from 'vue-router'
+import { setting, logoWithText, back } from '../../assets'
+
+defineProps({
+  showLogo: {
+    type: Boolean,
+    default: false,
+  },
+  showSetting: {
+    type: Boolean,
+    default: false,
+  },
+})
 
 const router = useRouter()
-const currentPath = computed(() => router.currentRoute.value.path)
-
-const isHome = computed(() => currentPath.value === '/')
-const isSetting = computed(() => currentPath.value === '/setting')
 
 const onClickBack = () => {
   router.back()
