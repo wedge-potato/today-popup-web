@@ -1,5 +1,5 @@
 <template>
-  <div class='flex justify-between items-center bg-grey-5 h-12 px-4'>
+  <nav-bar-container>
     <img v-if='showLogo' :src='logoWithText' alt='오늘의 팝업' height='24px' />
     <button v-else @click='onClickBack'>
       <img :src='back' alt='설정' width='24px' height='24px' />
@@ -7,12 +7,13 @@
     <button v-if='showSetting' @click='onClickSetting'>
       <img :src='setting' alt='설정' width='24px' height='24px' />
     </button>
-  </div>
+  </nav-bar-container>
 </template>
 <script setup lang='ts'>
 
 import { useRouter } from 'vue-router'
 import { setting, logoWithText, back } from '../../assets'
+import NavBarContainer from './NavBarContainer.vue'
 
 defineProps({
   showLogo: {
