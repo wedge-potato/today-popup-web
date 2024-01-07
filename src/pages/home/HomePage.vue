@@ -2,7 +2,7 @@
   <nav-bar show-logo show-setting />
   <div class='px-4'>
     <div class='flex justify-between my-3'>
-      <region-button :count='0' @click='onClickRegion' />
+      <region-button :count='filterCount' @click='onClickRegion' />
       <button @click='changeSort'>{{ sortTextRef }}</button>
     </div>
     <popup-list :popup-list='data' @click='onClick' />
@@ -23,6 +23,8 @@ const router = useRouter()
 const data = getPopupList()
 
 const isModalOpen = ref(false)
+const filter = ref<string[]>([])
+const filterCount = computed(() => filter.value.length)
 const sortRef = ref<'new' | 'end'>('new')
 const sortTextRef = computed(() => sortRef.value === 'new' ? '최신 오픈순' : '종료 날짜순')
 

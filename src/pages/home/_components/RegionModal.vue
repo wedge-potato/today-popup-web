@@ -8,7 +8,8 @@
         </div>
       </div>
       <div class='bg-grey-5'>
-        <div v-for='region in regions' :key='region' class='h-14 flex justify-center items-center px-6 body-1'>
+        <div v-for='region in regions' :key='region' @click='onClickItem'
+             class='h-14 flex justify-center items-center px-6 body-1'>
           {{ region }}
         </div>
       </div>
@@ -26,6 +27,10 @@ import RegionModalHeader from './RegionModalHeader.vue'
 const regions = ['강남구', '서초구', '성동구', '광진구', '마포구', '송파구', '용산구', '종로구']
 
 const emit = defineEmits(['close'])
+
+const onClickItem = (id: number) => {
+  emit('select', id)
+}
 
 const onClose = () => {
   emit('close')
