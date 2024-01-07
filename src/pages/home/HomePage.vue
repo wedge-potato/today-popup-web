@@ -3,7 +3,10 @@
   <div class='px-4'>
     <div class='flex justify-between my-3'>
       <region-button :count='filterCount' @click='onClickRegion' />
-      <button @click='changeSort'>{{ sortTextRef }}</button>
+      <button @click='changeSort' class="flex items-center gap-1">
+        <img :src="sort" alt="정렬" width="24px" height="24px" />
+        <span class="cap-1">{{ sortTextRef }}</span>
+      </button>
     </div>
     <popup-list :popup-list='data' @click='onClick' class="pt-2" />
   </div>
@@ -24,6 +27,7 @@ import RegionButton from './_components/RegionButton.vue'
 import { getPopupList } from '../../requests/getPopupList.ts'
 import { useRouter } from 'vue-router'
 import { computed, ref } from 'vue'
+import {sort} from "../../assets";
 
 const router = useRouter()
 
