@@ -42,6 +42,7 @@ export default {
         70: '#555555',
         80: '#1E1E1E',
       },
+      'white': '#FFFFFF',
     },
     extend: {},
   },

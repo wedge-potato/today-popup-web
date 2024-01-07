@@ -1,10 +1,12 @@
 <template>
   <nav-bar show-logo show-setting />
-  <div class='flex justify-between'>
-    <span>지역</span>
-    <button @click='changeSort'>{{ sortTextRef }}</button>
+  <div class='px-4'>
+    <div class='flex justify-between my-3'>
+      <region-button :count='0' />
+      <button @click='changeSort'>{{ sortTextRef }}</button>
+    </div>
+    <popup-list :popup-list='data' @click='onClick' />
   </div>
-  <popup-list :popup-list='data' @click='onClick' />
 </template>
 <script setup lang='ts'>
 
@@ -13,6 +15,7 @@ import { getPopupList } from '../../requests/getPopupList.ts'
 import PopupList from '../../components/popup/PopupList.vue'
 import { useRouter } from 'vue-router'
 import { computed, ref } from 'vue'
+import RegionButton from './_components/RegionButton.vue'
 
 const router = useRouter()
 
