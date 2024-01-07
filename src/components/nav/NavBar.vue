@@ -2,9 +2,10 @@
   <nav-bar-container>
     <img v-if='showLogo' :src='logoWithText' alt='오늘의 팝업' height='24px' />
     <button v-else @click='onClickBack'>
-      <img :src='back' alt='설정' width='24px' height='24px' />
+      <img :src='back' alt='뒤로가기' width='24px' height='24px' />
     </button>
-    <button v-if='showSetting' @click='onClickSetting'>
+    <h1 class="sub-1 ml-2">{{text}}</h1>
+    <button v-if='showSetting' @click='onClickSetting' class="flex ml-auto">
       <img :src='setting' alt='설정' width='24px' height='24px' />
     </button>
   </nav-bar-container>
@@ -16,6 +17,7 @@ import { setting, logoWithText, back } from '../../assets'
 import NavBarContainer from './NavBarContainer.vue'
 
 defineProps({
+  text: String,
   showLogo: {
     type: Boolean,
     default: false,
@@ -33,6 +35,6 @@ const onClickBack = () => {
 }
 
 const onClickSetting = () => {
-  router.push('/setting')
+  router.push('/settings')
 }
 </script>

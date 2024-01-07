@@ -27,7 +27,7 @@ import RegionButton from './_components/RegionButton.vue'
 import { getPopupList } from '../../requests/getPopupList.ts'
 import { useRouter } from 'vue-router'
 import { computed, ref } from 'vue'
-import {sort} from "../../assets";
+import {sort} from '../../assets'
 
 const router = useRouter()
 
