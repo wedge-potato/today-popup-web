@@ -1,6 +1,11 @@
 <template>
-  <div class='flex gap-2 flex-wrap'>
-    <popup-item v-for='(popup, index) in list' v-bind:key='index' :item='popup' @click='onClick(popup.id)' />
+  <div class='flex justify-between flex-wrap mt-2'>
+    <popup-item
+      v-for='(popup, index) in list'
+      v-bind:key='index'
+      :item='popup'
+      @click='onClick(popup.id)'
+      class='w-[calc(50%-5px)] mb-7' />
   </div>
 </template>
 <script setup lang='ts'>

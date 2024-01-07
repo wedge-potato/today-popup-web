@@ -3,8 +3,9 @@ export interface Popup {
   title: string,
   startDate?: string,
   endDate?: string,
-  region?: string[]
+  region?: string,
   img?: string,
+  category?: string,
 }
 
 export interface PopupList {
@@ -17,8 +18,9 @@ const mock: Popup = {
   title: '빵빵이와 끼꼬의 크리스마스 팝업스토어',
   startDate: '2024-01-01',
   endDate: '2024-01-01',
-  region: ['서울시', '성동구'],
+  region: '성동구',
   img: '',
+  category: '팝업스토어',
 }
 
 const mockList: Popup[] = [mock, mock, mock, mock, mock]
