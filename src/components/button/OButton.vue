@@ -5,7 +5,7 @@
     </span>
   </button>
 </template>
-<script setup>
+<script setup lang="ts">
 defineProps({
   disabled: {
     type: Boolean,

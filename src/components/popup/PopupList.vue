@@ -1,5 +1,5 @@
 <template>
-  <div class='flex justify-between flex-wrap mt-2'>
+  <div class='flex justify-between flex-wrap'>
     <popup-item
       v-for='(popup, index) in list'
       v-bind:key='index'

@@ -9,7 +9,7 @@
     <span class='cap-1'>지역</span>
   </button>
 </template>
-<script setup>
+<script setup lang='ts'>
 import { filterBlack, filterCoral } from '../../../assets'
 import { computed } from 'vue'
 
