@@ -43,7 +43,7 @@ import NavBar from '../../components/nav/NavBar.vue'
 import mock from '../../assets/mock.png'
 import { getPopup } from '../../requests/getPopup.ts'
 import {computed, ref} from 'vue'
-import Division from '../../components/division/Division.vue'
+import Division from '../../components/divide-line/DivideLine.vue'
 import {time, calendar, location, link} from '../../assets'
 
 const data = getPopup()
