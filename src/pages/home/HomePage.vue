@@ -8,7 +8,7 @@
         <span class="cap-1">{{ sortTextRef }}</span>
       </button>
     </div>
-    <popup-list :popup-list='data' @click='onClick' class="pt-2" />
+    <popup-list :popup-list='popupList' @click='onClick' class="pt-2" />
   </div>
   <region-modal
     v-if='isModalOpen'
@@ -24,14 +24,16 @@ import NavBar from '../../components/nav/NavBar.vue'
 import PopupList from '../../components/popup/PopupList.vue'
 import RegionModal from './_components/RegionModal.vue'
 import RegionButton from './_components/RegionButton.vue'
-import { getPopupList } from '../../requests/getPopupList.ts'
 import { useRouter } from 'vue-router'
 import { computed, ref } from 'vue'
 import {sort} from '../../assets'
+import {useGetPopupList} from '../../requests/use'
 
 const router = useRouter()
 
-const data = getPopupList()
+const getPopupList = useGetPopupList({orderBy:'startDate', order:'asc'})
+
+const popupList = computed(()=> getPopupList.data.value)
 
 const isModalOpen = ref(false)
 const selected = ref('')

@@ -34,19 +34,25 @@
   <division/>
   <div class="flex flex-col py-5 px-5 gap-2">
     <h2 class='sub-1 mb-3'>위치</h2>
-    <span class="body-1">{{ data.location }}</span>
+    <span class="body-1 inline-block">
+      {{ data.location }}
+      <img :src="link" />
+      <span>
+        복사
+      </span>
+    </span>
   </div>
 </template>
 <script setup lang='ts'>
 
 import NavBar from '../../components/nav/NavBar.vue'
 import mock from '../../assets/mock.png'
-import { getPopup } from '../../requests/getPopup.ts'
+// import { getPopup } from '../../requests/getPopup.ts'
 import {computed, ref} from 'vue'
 import Division from '../../components/divide-line/DivideLine.vue'
 import {time, calendar, location, link} from '../../assets'
 
-const data = getPopup()
+// const data = getPopup()
 
 const showMore = ref(false)
 

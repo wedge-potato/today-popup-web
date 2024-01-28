@@ -1,7 +1,7 @@
 <template>
   <div class='flex justify-between flex-wrap'>
     <popup-item
-      v-for='(popup, index) in list'
+      v-for='(popup, index) in popupList'
       v-bind:key='index'
       :item='popup'
       @click='onClick(popup.id)'
@@ -10,16 +10,14 @@
 </template>
 <script setup lang='ts'>
 import PopupItem from './PopupItem.vue'
-import { PopupList } from '../../requests/getPopupList.ts'
-import { computed, PropType } from 'vue'
+import { PropType } from 'vue'
+import {Popup} from '../../requests'
 
-const props = defineProps({
-  popupList: Object as PropType<PopupList>,
+defineProps({
+  popupList: Object as PropType<Popup[]>,
 })
 
 const emit = defineEmits(['click'])
-
-const list = computed(() => props.popupList?.list)
 
 const onClick = (id: number) => {
   emit('click', id)
