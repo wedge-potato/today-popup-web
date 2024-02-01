@@ -33,7 +33,7 @@ const router = useRouter()
 
 const getPopupList = useGetPopupList({orderBy:'startDate', order:'asc'})
 
-const popupList = computed(()=> getPopupList.data.value)
+const popupList = computed(()=> getPopupList?.data?.value?.data)
 
 const isModalOpen = ref(false)
 const selected = ref('')

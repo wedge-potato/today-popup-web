@@ -1,6 +1,9 @@
 <template>
   <div class='flex flex-col'>
-    <img :src='mock' alt='popup store thumbnail' class='rounded-lg mb-2'>
+    <div class='rounded-lg mb-2 bg-grey-20 min-w-[168px] min-h-[168px] flex items-center' >
+    <!--todo: remove onerror-->
+      <img :src='item?.thumbnail' alt='popup store thumbnail' onerror="this.style.display='none'"/>
+    </div>
     <div class='sub-2'>{{ item?.title }}</div>
     <div class='sub-3 text-secondary'>
       <span>{{ item?.location }}</span>
@@ -16,7 +19,6 @@
 <script setup lang='ts'>
 import { PropType } from 'vue'
 import { Popup } from '../../requests'
-import mock from '../../assets/mock.png'
 import { calendar } from '../../assets'
 
 defineProps({
