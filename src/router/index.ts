@@ -12,6 +12,7 @@ const routes = [
   {
     path: '/detail/:id',
     component: DetailPage,
+    props: true,
   },
   {
     path: '/settings',
