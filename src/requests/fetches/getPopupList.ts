@@ -1,12 +1,13 @@
 import {oaxios} from '../axios.ts'
 export interface Popup {
   id: number,
-  category: string,
   thumbnail: string,
   title: string,
   startDate: string,
   endDate: string,
-  location: string
+  sido: string,
+  sigungu: string,
+  category: string,
 }
 
 export interface PopupList {

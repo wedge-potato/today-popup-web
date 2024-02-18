@@ -21,9 +21,10 @@
 <script setup lang='ts'>
 
 import NavBar from '../../components/nav/NavBar.vue'
-import PopupList from '../../components/popup/PopupList.vue'
 import RegionModal from './_components/RegionModal.vue'
 import RegionButton from './_components/RegionButton.vue'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import PopupList from '../../components/popup/PopupList.vue'
 import { useRouter } from 'vue-router'
 import {computed, reactive, ref} from 'vue'
 import {sort} from '../../assets'
@@ -31,7 +32,6 @@ import {useGetPopupList} from '../../requests/use'
 import {OrderOption} from './types.ts'
 
 const router = useRouter()
-
 
 const popupList = computed(()=> getPopupList?.data?.value?.data)
 
