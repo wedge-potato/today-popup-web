@@ -25,7 +25,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/today-popup-web'),
+  history: createWebHistory(),
   routes,
 })
 
